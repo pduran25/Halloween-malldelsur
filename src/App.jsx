@@ -27,8 +27,8 @@ if(codigo == 1){
   source = "./assets/halloween1/mom1.glb"
   source2 = "./assets/halloween1/mom1.usdz"
 }else if(codigo == 2){
-  source = "./assets/halloween1/fantasma2.glb"
-  source2 = "./assets/halloween1/fantasma2.usdz"
+  source = "./assets/halloween1/fan4.glb"
+  source2 = "./assets/halloween1/fan4.usdz"
 }
 
 
