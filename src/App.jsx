@@ -1,35 +1,113 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import styled from 'styled-components';
+import sound from './assets/musica.mp3';
+import  {useState} from 'react';
+
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+function App() {
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  const codigo = params.get('personaje');
+  console.log("mascota numero: "+codigo);
+  var source = "";
+  var source2 = "";
+  //const [sourcea, setSourcea] = useState("./assets/chiverito/chivp3.glb"); //codigo adicional
+  //const [source2a, setSource2a] = useState("./assets/chiverito/chivp3.usdz"); //codigo adicional
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+
+
+  
+
+
+
+  
+if(codigo == 1){
+  source = "./assets/halloween1/mom1.glb"
+  source2 = "./assets/halloween1/mom1.usdz"
+}else if(codigo == 2){
+  source = "./assets/halloween1/fantasma2.glb"
+  source2 = "./assets/halloween1/fantasma2.usdz"
+}
+
+
+const toggleAudio = () => {
+  const audioElement = document.getElementById('myAudio');
+
+  if (isAudioPlaying) {
+    audioElement.pause();
+  } else {
+    audioElement.play();
+  }
+
+  setIsAudioPlaying(!isAudioPlaying);
+};
+
+
+
+
+
+
+  return (<div className="App">
+<model-viewer src={source} ios-src={source2} camera-controls camera-orbit="-40deg 70deg 200m" camera-target="0 0 0" ar ar-modes="scene-viewer webxr quick-look" xr-environment ar-placement="wall" autoplay>
+
+        <SoundButton
+        src={isAudioPlaying ? './assets/audio.png' : './assets/sinaudio.png'}
+        alt={isAudioPlaying ? 'Sonido inactivo' : 'Sonido activo'}
+        onClick={toggleAudio}
+      />
+
+      <audio id="myAudio" src={sound} loop/>
+
+
+        <Boton slot="ar-button" >
+          Halloween
+        </Boton>
+  </model-viewer>
+    </div>
   )
 }
 
-export default App
+const SoundButton = styled.img`
+display: inline-block;
+`;
+
+
+
+
+
+
+
+const Boton = styled.button`
+
+display: inline-block;
+border: none;
+border-radius: 4px;
+background-color: #F8621F;
+color: #fff;
+padding: 12px 24px;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+cursor: pointer;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease;
+position: absolute; 
+right: 100px; 
+left: 100px;
+
+bottom: 100px; 
+
+&:hover {
+  background-color: #006699;
+}
+
+&:focus {
+  outline: none;
+  background-color: #004466;
+}
+`;
+
+export default App;
