@@ -24,8 +24,8 @@ function App() {
 
   
 if(codigo == 1){
-  source = "./assets/halloween1/momi4.glb"
-  source2 = "./assets/halloween1/momi4.usdz"
+  source = "./assets/halloween1/momia6.glb"
+  source2 = "./assets/halloween1/momia6.usdz"
 }else if(codigo == 2){
   source = "./assets/halloween1/fan4.glb"
   source2 = "./assets/halloween1/fan4.usdz"
