@@ -62,7 +62,7 @@ const toggleAudio = () => {
 
 
         <Boton slot="ar-button" >
-          Halloween
+          Cacería Virtual
         </Boton>
   </model-viewer>
     </div>
