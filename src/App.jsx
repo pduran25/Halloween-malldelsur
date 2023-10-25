@@ -101,12 +101,12 @@ left: 100px;
 bottom: 100px; 
 
 &:hover {
-  background-color: #006699;
+  background-color: #F8621F;
 }
 
 &:focus {
   outline: none;
-  background-color: #004466;
+  background-color: #F8621F;
 }
 `;
 
