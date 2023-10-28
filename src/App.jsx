@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import sound from './assets/musica.mp3';
+import sound from './assets/drama.mp3';
 import  {useState} from 'react';
 
 
@@ -29,6 +29,9 @@ if(codigo == 1){
 }else if(codigo == 2){
   source = "./assets/halloween1/fan4.glb"
   source2 = "./assets/halloween1/fan4.usdz"
+}else if(codigo == 3){
+  source = "./assets/halloween1/v10.glb"
+  source2 = "./assets/halloween1/v10.usdz"
 }else if(codigo == 4){
   source = "./assets/halloween1/c5.glb"
   source2 = "./assets/halloween1/c5.usdz"
